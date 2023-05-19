@@ -1,17 +1,19 @@
-export const meta = () => {
-  return [{ title: "New Remix App" }];
-};
+import { Link } from "@remix-run/react";
+
+import homeStyles from "~/styles/home.css";
 
 export default function Index() {
   return (
-    <div
-      style={{
-        fontFamily: "system-ui, sans-serif",
-        lineHeight: "1.4",
-        color: "green",
-      }}
-    >
-      <h1>Hello oscar!</h1>
-    </div>
+    <main id="content">
+      <h1>Vill du veta vad klockan är?</h1>
+
+      <p id="cta">
+        <Link to="/clock">Klicka här!</Link>
+      </p>
+    </main>
   );
+}
+
+export function links() {
+  return [{ rel: "stylesheet", href: homeStyles }];
 }
